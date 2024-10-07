@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: relative;
+}
+.container-first{
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
+}
+.container-second{
+    width: 100vw;
+    height: 100vh;
+    background-color: royalblue;
+}
+.container-third{
+    width: 100vw;
+    height: 100vh;
+    background-color: yellowgreen;
+}
+.scroll-event{
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50% , -50%);
+    font-size: 100px;
+    opacity: 0;
+    transition: all 1s;
+}
+.scroll-event.is-active{
+    opacity: 1;
+    top: 50%;
+}
