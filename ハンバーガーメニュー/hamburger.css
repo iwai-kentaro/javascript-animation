@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+li {
+  list-style: none;
+}
+body {
+  position: relative;
+  transition: all .5s;
+}
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+/* グローバルメニュー */
+body.open{
+    height: 100%;
+    overflow: hidden;
+}
+.globalmenu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all .5s;
+  opacity: 1; 
+  z-index: 99;
+}
+.globalmenu.open{
+    opacity: 1; 
+    visibility:visible;
+    right: 0;
+    transition: all .5s;
+    z-index: 99;
+    display: block; 
+}
+.globalmenu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ハンバーガーボタン */
+.hamburger {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  max-width: 100%;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.3s;
+  z-index: 9999;
+  cursor: pointer;
+}
+.hamburger.open {
+  opacity: 1;
+}
+.hamburger span {
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  max-width: 100%;
+  background-color: #333;
+  transition: all 0.5s;
+}
+
+.hamburger span + span {
+  margin-top: 10px;
+}
+/* ハンバーガーボタンをクリックした際の変化時 */
+.hamburger.open {
+    transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(10px ,10px);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px ,-6px);
+}
